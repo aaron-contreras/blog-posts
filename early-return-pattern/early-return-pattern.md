@@ -138,17 +138,16 @@ This pattern can be used with multi-line conditionals as well. The example below
 ~~~javascript
 function attackedHandler(damage) {
   const armorStrength = getArmorStrength();
-  let damageValue;
 
   if (damage > armorStrength) {
-    damageValue = calculateDamage(damage, armorStrength);
+    let damageValue = calculateDamage(damage, armorStrength);
     return takeDamage(damageValue);
   }
 
   if (damage === armorStrength) {
-    return takeArmorDamage(damageValue)
+    return takeArmorDamage(damage)
   }
 
-  recoilDamage(damageValue);
+  recoilDamage(damage);
 }
 ~~~
