@@ -38,10 +38,10 @@ This function will only log `'... And just when, it hit me, somebody turned arou
 Since we can use a `return` statement to end a function immediately, we can take advantage of it. Lets look at a traditional `if else` statement and how one might convert it to the early return pattern.
 
 ~~~javascript
-function healthBarColor(health, maxHealth, shield) {
+function healthBarColor(health, maxHealth, hasShield) {
   const percentLeft = (health / maxHealth) * 100;
 
-  if (shield) {
+  if (hasShield) {
     return 'blue'
   } else if (percentLeft < 15) {
     return 'red';
@@ -58,10 +58,10 @@ console.log(healthBarColor(30, 124, false));
 In this case, we will find the value `'yellow'` in the console. This looks OK, but it can be cleaner with the use of an early return. Let's refactor `healthBarColor` to use this pattern now.
 
 ~~~javascript
-function healthBarColor(health, maxHealth, shield) {
+function healthBarColor(health, maxHealth, hasShield) {
   const percentLeft = (health / maxHealth) * 100;
 
-  if (shield) { return 'blue'; }
+  if (hasShield) { return 'blue'; }
   if (percentLeft < 15) { return 'red'; }
   if (percentLeft < 60) { return 'yellow'; }
   return 'green';
@@ -73,10 +73,10 @@ console.log(healthBarColor(30, 124, false));
 This code is functionally the same as the code above, but it is arguably more readable and is shorter. This works because when we `return` from a function, the function ends then and there and gives us the value we desire. We can clean this up even more though, with a quirk of JavaScript. In JavaScript, if you have an if statement that is one line, you can omit the curly braces ( `{` `}` ). That would look like this:
 
 ~~~javascript
-function healthBarColor(health, maxHealth, shield) {
+function healthBarColor(health, maxHealth, hasShield) {
   const percentLeft = (health / maxHealth) * 100;
 
-  if (shield) return 'blue';
+  if (hasShield) return 'blue';
   if (percentLeft < 15) return 'red';
   if (percentLeft < 60) return 'yellow';
   return 'green';
@@ -87,11 +87,68 @@ console.log(healthBarColor(30, 124, false));
 
 Now we have some clean, and easy to understand code that is still peformant.
 
-## Gotchas
+## Gotcha!'s
 
-Although this pattern is very clean when using returns, it can have a negative impact on performance (although normally miniscule) when mis-using this pattern. Lets look at an examples.
+Although the early return pattern can be very clean, there are times where it is contraindicated, mainly in non-functional style functions.
 
 ~~~javascript
-function inventoryStatus
+function attackedHandler(damage) {
+  const armorStrength = getArmorStrength();
+  let damageValue;
+
+  if (damage > armorStrength) damageValue = calculateDamage(damage, armorStrength);
+  if (damage === armorStrength) damageValue = damage - 10;
+  if (damage < armorStrength) damageValue = 0;
+
+  applyDamage(damageValue);
+  setArmorStrength(damageValue);
+}
+~~~
+
+This looks clean, but is a bad idea because each `if` statement has to be evaluated, even if the first one is `true`. This technically isn't an early return pattern, but it does mimic it, even though it is bad practice. To fix this, you would have to use the standard `if else` statement.
+
+~~~javascript
+function attackedHandler(damage) {
+  const armorStrength = getArmorStrength();
+  let damageValue;
+
+  if (damage > armorStrength) {
+    damageValue = calculateDamage(damage, armorStrength);
+  } else if (damage === armorStrength) {
+    damageValue = damage - 10;
+  } else if (damage < armorStrength) {
+    damageValue = 0;
+  }
+
+  applyDamage(damageValue);
+  setArmorStrength(damageValue);
+}
+~~~
+
+Another time the early return pattern will not work, is when you have to run code after the `if else` statement. The example above shows this pretty well also. If you were to return from the function within the `if` statements, the rest of the function would not run. This is called 'unreachable code' would introduce bugs and logic errors in your program.
+
+## Conclusion
+
+The early return pattern (have I said 'early return pattern' enough yet?), is a popular pattern and something you might see in other's code. Understanding why it's used and when to use it is important when it comes down to using it yourself. Now get out there and use this new-found knowledge to write better code!
+
+### P.S.
+
+This pattern can be used with multi-line conditionals as well. The example below is perfectly fine:
+
+~~~javascript
+function attackedHandler(damage) {
+  const armorStrength = getArmorStrength();
+  let damageValue;
+
+  if (damage > armorStrength) {
+    damageValue = calculateDamage(damage, armorStrength);
+    return takeDamage(damageValue);
+  }
+
+  if (damage === armorStrength) {
+    return takeArmorDamage(damageValue)
+  }
+
+  recoilDamage(damageValue);
 }
 ~~~
