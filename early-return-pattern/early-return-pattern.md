@@ -1,10 +1,10 @@
 # Early Return Pattern
 
-People new to programming sometimes struggle to understand returning early inside a function. Especially if they come from a language like Ruby, which has implicit returns. Today we're going to explore what an early return is, and what it can be used for in the context of JavaScript.
+People new to programming sometimes struggle to understand returning early inside a function, especially if they come from a language like Ruby, which has implicit returns. Today we're going to explore what an early return is, and what it can be used for in the context of JavaScript.
 
 ## Understanding `return`
 
-To understand what an early return is, you must first understand what `return` does in a function. Put simply, `return` returns a value from the function, it could be anything. In JavaScript you can return anything from a string, to an object, and even another function. When a `return` statement has been found, the function ends immediately and return's the value to whatever called the funciton.
+To understand what an early return is, you must first understand what `return` does in a function. Put simply, `return` returns a value from the function; it could be anything. In JavaScript you can return anything- a string, an object, or even another function. When a `return` statement has been found, the function ends immediately and returns the value to whatever called the funciton.
 
 ~~~javascript
 function timesTwo(x) {
@@ -35,7 +35,7 @@ This function will only log `'... And just when, it hit me, somebody turned arou
 
 ## Early Return pattern
 
-Since we can use a `return` statement to end a function immediately, we can take advantage of it. Lets look at a traditional `if else` statement and how one might convert it to the early return pattern.
+Since we can use a `return` statement to end a function immediately, we can take advantage of it. Let's look at a traditional `if else` statement and how one might convert it to the early return pattern.
 
 ~~~javascript
 function healthBarColor(health, maxHealth, hasShield) {
@@ -125,11 +125,11 @@ function attackedHandler(damage) {
 }
 ~~~
 
-Another time the early return pattern will not work, is when you have to run code after the `if else` statement. The example above shows this pretty well also. If you were to return from the function within the `if` statements, the rest of the function would not run. This is called 'unreachable code' would introduce bugs and logic errors in your program.
+Another time the early return pattern will not work is when you have to run code after the `if else` statement. The above code is a good example of this. If you were to return from the function within the `if` statements, the rest of the function would not run. This is called 'unreachable code' and would introduce bugs and logic errors in your program.
 
 ## Conclusion
 
-The early return pattern (have I said 'early return pattern' enough yet?), is a popular pattern and something you might see in other's code. Understanding why it's used and when to use it is important when it comes down to using it yourself. Now get out there and use this new-found knowledge to write better code!
+The early return pattern (have I said 'early return pattern' enough yet?), is a popular pattern and something you might see in other's code. Understanding why it's used and when to use it is important when it comes down to using it yourself. Now get out there and use this newfound knowledge to write better code!
 
 ### P.S.
 
