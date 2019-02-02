@@ -207,3 +207,49 @@ const addedArray = myMap([1, 2, 3], (arrayNum) => arrayNum + 2)
 ~~~
 
 ### Event Listeners (DOM)
+
+Event listeners in JavaScript seem to be confusing to people, but after understanding callbacks, these should be a lot easier to understand. 
+
+let's review what they look like, see if you can pick out the parts of them.
+
+~~~javascript
+const element = document.querySelector("#myId");
+element.addEventListener('click', (event) => {
+  // Do something
+});
+~~~
+
+If you notice, the second argument (value you pass into a funciton) to `addEventListener` is a function. In this case it's an anonymous arrow funciton. This piece of code could be written like this and behave identically.
+
+~~~javascript
+const element = document.querySelector("#myId");
+element.addEventListener('click', function(event) {
+  // Do something
+});
+~~~
+
+Part of what confuses people is the `event` object. Where does it come from? How does it get there? 
+
+This event object is passed into the callback function by the `.addEventListener` function. A function is calling another function.
+
+This is because.... Callbacks are just functions passed into another function.
+
+That means we can declare a function outside of the argument list and just add it by name as well. Like so:
+
+~~~javascript
+function myEventHandler(event) {
+  // do something, probably with 'event'
+}
+
+const element = document.querySelector("#myId");
+element.addEventListener('click', myEventHandler);
+~~~
+
+Notice how we didn't 'call' the function called `myEventHandler`? If we were to call it inside the parameter list, the function we called `myEventHandler` would run immediately and give the `addEventListener` the result of calling that function. (in this case, it would be undefined)
+
+## Conclusion
+
+Callbacks are an important part of JavaScript, they are vital to understand, even with the onset of promises and async/await. Callbacks get called by another funciton, so you don't have to call them in the arguments, ( Calling a function is using a function's name and adding `()` to the end of it, like `console.log()` )
+
+These are something that you will learn if you give yourself time, understanding how they work will make your JavaScript carrier a lot easier!
+
