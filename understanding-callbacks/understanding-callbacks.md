@@ -33,6 +33,7 @@ This is actually called a `function declaration` and is broken into a few parts.
     - This is where the function actually does something. This code gets run with whatever values are passed into the parameters.
 
 
+#### 
 
 Calling a function looks similar to declaring it. When you call the function, you type the name of the function and add `()` after. (without the `function` keyword and the body). Inside the `()` you may pass it the values you want the parameters you defined to represent. These `parameters` are used like variables inside the body of the function.
 
