@@ -7,6 +7,7 @@ Callbacks seem to be a sticking point for people new to programming. Put simply,
 
 JavaScript has many ways of defining a function, but they all follow a similar pattern and have the same pieces, they just look a bit different. There is more technical terminology surrounding functions, but we are going to gloss over them for now. (If you are interested, feel free to look up "Function Declarations" and "Function Expressions").
 
+
 ### Normal Functions (Named Functions)
 
 Normal functions, probably the first way you learned about creating functions. Understanding the anatomy of these will help you understand the other types of functions as well.
@@ -19,6 +20,7 @@ Function funkyFunction(music, isWhiteBoy) {
 }
 ~~~
 
+
 This is actually called a `function declaration` and is broken into a few parts.
 
 1. The `function` keyword
@@ -29,6 +31,7 @@ This is actually called a `function declaration` and is broken into a few parts.
     - everything between `(` and `)` is an argument, these must be separated by commas if there is more than one. There may also be nothing between the `()` if the function does not take any arguments. The parenthesis are required.
 4. The function body
     - This is where the function actually does something. This code gets run with whatever values are passed into the parameters.
+    
 
 Calling a function looks similar to declaring it. When you call the function, you type the name of the function and add `()` after. (without the `function` keyword and the body). Inside the `()` you may pass it the values you want the parameters you defined to represent. These `parameters` are used like variables inside the body of the function.
 
@@ -54,9 +57,7 @@ const funkyFunction = function(music, isWhiteBoy) {
     console.log('Play: ' +  music);
   }
 }
-~~~
 
-~~~JavaScript
 // This is called an arrow function, we'll get into these soon.
 const funkyFunction = (music, isWhiteBoy) => {
   if (isWhiteBoy) {
@@ -65,13 +66,16 @@ const funkyFunction = (music, isWhiteBoy) => {
 }
 ~~~
 
+
 An anonymous function is just a function that does not have a name, this doesn't mean that it cannot be called. Each of the above functions can be called exactly the same way:
 
 ~~~JavaScript
 funkyFunction('that funky music', true);
 ~~~
 
+
 And this is because functions are 'first class citizens' in JavaScript and can be assigned to variables. Or passed as an argument to another function.
+
 
 #### Arrow Functions
 
@@ -81,7 +85,9 @@ These are just a shorter way to write a function. They do have some special rule
 * if arrow functions are one line, the brackets `{}` can be omitted.
   * When omitting the brackets, the arrow function returns the evaluated expression without requiring the `return` keyword.
 
+
 The functions below are variations of the rules above
+
 ~~~JavaScript
 const playThe = (funky) => {
   return funky + " music";
@@ -96,6 +102,7 @@ const playThe = funky => funky + " music";
 // You can call all of these functions like: `playThe('blues')`
 ~~~
 
+
 Below are some examples of an arrow function without an argument. These functions are all identical as well. Notice the `()` in place of any named arguments. It is required because there aren't any parameters.
 
 ~~~JavaScript
@@ -108,9 +115,11 @@ const playThat = () => {
 }
 ~~~
 
+
 ### Key Point
 
 Take some time and study the function examples above and note how they are similar and how the same parts exist in both, with the exception of the `function` keyword.
+
 
 ## What Callbacks Look Like
 
@@ -121,6 +130,7 @@ const notes = ['do', 're', 'me'];
 
 notes.forEach((note) => console.log(note));
 ~~~
+
 
 This is the `forEach` array method. This method simply takes a `callback` function as it's argument. (Don't forget that `forEach` is a function itself).
 
@@ -141,9 +151,11 @@ notes.forEach(function(note) {
 notes.forEach(console.log); 
 ~~~
 
+
 ## How Callbacks Work
 
 To state it once more: Callbacks are just functions passed into other functions as arguments (as a parameter).
+
 
 ### Iterator Functions
 
@@ -162,6 +174,7 @@ myForEach(myArry, (item) => {
   console.log(item + 2); 
 })
 ~~~
+
 
 *WHOA, hold up. Where did `item` come from?*
 
@@ -189,6 +202,7 @@ Function printItemPlusTwo(item) {
 myForEach(myArry, printItemPlusTwo); 
 ~~~
 
+
 Another good example of how callbacks work might be the `.map` method (read more on MDN), below is one way it might be implemented.
 
 ~~~JavaScript
@@ -214,6 +228,7 @@ const addedArray = myMap([1, 2, 3], (arrayNum) => {
 const addedArray = myMap([1, 2, 3], (arrayNum) => arrayNum + 2)
 ~~~
 
+
 ### Event Listeners (DOM)
 
 Event listeners in JavaScript seem to be confusing to people, but after understanding callbacks, these should be a lot easier to understand. 
@@ -228,6 +243,7 @@ element.addEventListener('click', (event) => {
 });
 ~~~
 
+
 If you notice, the second argument (value you pass into a function) to `addEventListener` is a function. In this case it's an anonymous arrow function. This piece of code could have also have been written like this and it would behave identically.
 
 ~~~JavaScript
@@ -236,6 +252,7 @@ element.addEventListener('click', Function(event) {
   console.log(event.target.value);
 });
 ~~~
+
 
 Part of what confuses people is the `event` object. Where does it come from? How does it get there? 
 
@@ -254,7 +271,9 @@ const element = document.querySelector("#myId");
 element.addEventListener('click', myEventHandler);
 ~~~
 
+
 Notice how we didn't 'call' the function called `myEventHandler`? If we were to call it inside the parameter list, the function we called `myEventHandler` would run immediately and give the `addEventListener` the result of calling that function. (in this case, it would be undefined)
+
 
 ## Conclusion
 
