@@ -24,7 +24,7 @@ This is actually called a `function declaration` and is broken into a few parts.
 1. The `function` keyword
   * This tells the JavaScript compiler you are making a named function
 2. The name
-  * This is the name of the function, and what you will use when you call it. It is also used in stack traces
+  * This is the name of the function, and what you will use when you call it. It is also used in stack traces.
 3. The arguments
   * everything between `(` and `)` is an argument, these must be separated by commas if there is more than one. There may also be nothing between the `()` if the function does not take any arguments. The parenthesis are required.
 4. The function body
@@ -41,7 +41,7 @@ funkyFunction('that funky music', true);
 
 ### Anonymous Functions
 
-These are very similar to normal functions, with just a few differences. Anonymous functions are not 'named', and have a few different syntaxes. Even though they cannot have a name, they can be assigned to a variable. The variable you might assign it to, is still not the same as a `function name`, they will show up in stack traces as "Anonymous Function".
+These are very similar to normal functions, with just a few differences. Anonymous functions are not 'named', and have a few different syntaxes. Even though they cannot have a name, they can be assigned to a variable. Even though when assigned to a variable they show up in stack traces, they are still considered an anonymous function. They may show up as 'anonymous function' in stack traces when passed into other functions as callbacks, however.
 
 Anonymous functions are mostly used by passing them into other functions as a `callback`. This will become more clear later.
 
