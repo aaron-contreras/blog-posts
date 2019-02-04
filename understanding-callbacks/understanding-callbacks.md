@@ -281,4 +281,4 @@ Notice how we didn't 'call' the function called `myEventHandler`? If we were to 
 
 Callbacks are an important part of JavaScript, they are vital to understand, even with the onset of promises and async/await. Callbacks get called by another function, so you don't have to call them in the arguments, ( Calling a function is using a function's name and adding `()` to the end of it, like `console.log()` )
 
-These are something that you will learn if you give yourself time, understanding how they work will make your JavaScript carrier a lot easier!
+These are something that you will learn if you give yourself time, understanding how they work will make your JavaScript career a lot easier!
