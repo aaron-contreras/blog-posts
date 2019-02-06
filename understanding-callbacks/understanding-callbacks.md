@@ -13,7 +13,7 @@ JavaScript has many ways of defining a function, but they all follow a similar p
 Normal functions, probably the first way you learned about creating functions. Understanding the anatomy of these will help you understand the other types of functions as well.
 
 ~~~JavaScript
-Function funkyFunction(music, isWhiteBoy) {
+function funkyFunction(music, isWhiteBoy) {
   if (isWhiteBoy) {
     console.log('Play: ' +  music);
   }
@@ -164,7 +164,7 @@ To state it once more: Callbacks are just functions passed into other functions 
 Below is what `forEach` might look like under the hood, notice it calls the `callback` function each time it loops over an item.
 
 ~~~JavaScript
-Function myForEach(array, callback) {
+function myForEach(array, callback) {
   for (let i = 0; i < array.length -1; i++) {
     callback(array[i]); // This is when the callback function gets called, or executed
   }
@@ -195,7 +195,7 @@ myForEach(myArry, function(item) {
 
 // This time we are declaring the function we want to use as a callback
 // Notice we define `item` as a parameter to be passed in when it's called by the `myForEach` function.
-Function printItemPlusTwo(item) {
+function printItemPlusTwo(item) {
   console.log(item + 2);
 }
 
@@ -208,10 +208,10 @@ myForEach(myArry, printItemPlusTwo);
 Another good example of how callbacks work might be the `.map` method (read more on MDN), below is one way it might be implemented.
 
 ~~~JavaScript
-Function myMap(array, callback) {
+function myMap(array, callback) {
   const myNewArray = [];
 
-  for (let i = 0; i < array.length - 1; i++) {
+  for (let i = 0; i < array.length; i++) {
     const callbackResult = callback(array[i]);
     myNewArray.push(callbackResult); 
   }
@@ -250,7 +250,7 @@ If you notice, the second argument (value you pass into a function) to `addEvent
 
 ~~~JavaScript
 const element = document.querySelector("#myId");
-element.addEventListener('click', Function(event) {
+element.addEventListener('click', function(event) {
   console.log(event.target.value);
 });
 ~~~
@@ -265,7 +265,7 @@ This is because.... Callbacks are just functions passed into another function as
 That means we can declare a function outside of the argument list and just add it by its name as well. Like so:
 
 ~~~JavaScript
-Function myEventHandler(event) {
+function myEventHandler(event) {
   // do something, probably with 'event'
 }
 
