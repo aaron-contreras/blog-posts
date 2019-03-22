@@ -32,7 +32,7 @@ This is one of those text-editors that blur the lines between basic and advanced
 
 #### vi
 
-The bane of all sys-admins and developers everywhere, nobody knows how to close it, let alone use it (you close it by pressing `ESC, :q!, ENTER`, by the way). This is another editor that blurs the lines between basic and avanced. Vi comes with every linux environment so is very useful on streamlined linux servers and remote operations where nano is not available. This editor is not intuitive and beginner friendly, but has some very nice features. Once one understands how to use it, one can edit a document very quickly and can move around the code very effeciently. Watching a master run vi, is nothing short of amazing. That being said, I wouldn't reccomend this to developers. There is a better alternative, vim, which I talk about below.
+The bane of all sys-admins and developers everywhere, nobody knows how to close it, let alone use it (you close it by pressing `ESC, :q!, ENTER`, by the way). This is another editor that blurs the lines between basic and advanced. Vi comes with every linux environment so is very useful on streamlined linux servers and remote operations where nano is not available. This editor is not intuitive and beginner friendly, but has some very nice features. Once one understands how to use it, one can edit a document very quickly and can move around the code very effeciently. Watching a master run vi, is nothing short of amazing. That being said, I wouldn't reccomend this to developers. There is a better alternative, vim, which I talk about below.
 
 ### Advanced Code Editors
 
