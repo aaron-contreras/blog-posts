@@ -40,7 +40,7 @@ Again, this is not an all inclusive list, but some that I have used or have been
 
 #### vim
 
-Vim is very simillar to vi in many ways, but vim allows plugins. There is a substantial vim community and people have been writing plugins for a while. Vim has everything one would need. Syntax highlighting, it's very fast, bracket-matching, and more. Vim is very good at staying out of the developers way and allowing the dev to rapidly traverse the document. At it's core, it tries to keep you from removing your hands off the home row, it is a favorite of keyboard warriors. You can try vim by typing `vimtutor`, it walks you through the basic usage. Give it a shot, you might find you relally like the keyboard commands.
+Vim is very simillar to vi in many ways, but vim allows plugins. There is a substantial vim community and people have been writing plugins for a while. Vim has everything one would need. Syntax highlighting, it's very fast, bracket-matching, and more. Vim is very good at staying out of the developers way and allowing the dev to rapidly traverse the document. At it's core, it tries to keep you from removing your hands off the home row, it is a favorite of keyboard warriors. You can try vim by typing `vimtutor`, it walks you through the basic usage. Give it a shot, you might find you really like the keyboard commands.
 
 #### Sublime Text
 
