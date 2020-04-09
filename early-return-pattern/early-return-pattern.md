@@ -147,7 +147,5 @@ function attackedHandler(damage) {
   if (damage === armorStrength) {
     return takeArmorDamage(damage)
   }
-
-  recoilDamage(damage);
 }
 ~~~
