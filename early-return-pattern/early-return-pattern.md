@@ -1,4 +1,4 @@
-# Early Return Pattern
+# Early Return Pattern Hi Kevin
 
 People new to programming sometimes struggle to understand returning early inside a function, especially if they come from a language like Ruby, which has implicit returns. Today we're going to explore what an early return is, and what it can be used for in the context of JavaScript.
 
