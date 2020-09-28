@@ -111,6 +111,6 @@ You may recognize this pattern in your own code, even if you're not explicitly u
 
 ## More Resources
 
-* https://sourcemaking.com/design_patterns/template_method
-* A very cool example in Ruby: https://repl.it/@rlmoser/TemplatePattern-Coffee#main.rb
-* A long video, but is mostly useful to understanding this pattern up to the 20 min mark: https://www.youtube.com/watch?v=7ocpwK9uesw
+* [Short overview of this pattern](https://sourcemaking.com/design_patterns/template_method)
+* [A very cool example in Ruby](https://repl.it/@rlmoser/TemplatePattern-Coffee#main.rb)
+* [A long video, but is mostly useful to understanding this pattern up to the 20 min mark](https://www.youtube.com/watch?v=7ocpwK9uesw)
