@@ -4,7 +4,7 @@ People new to programming sometimes struggle to understand returning early insid
 
 ## Understanding `return`
 
-To understand what an early return is, you must first understand what `return` does in a function. Put simply, `return` returns a value from the function; it could be anything. In JavaScript you can return anything- a string, an object, or even another function. When a `return` statement has been found, the function ends immediately and returns the value to whatever called the funciton.
+To understand what an early return is, you must first understand what `return` does in a function. Put simply, `return` returns a value from the function; it could be anything. In JavaScript you can return anything- a string, an object, or even another function. When a `return` statement has been found, the function ends immediately and returns the value to whatever called the function.
 
 ~~~javascript
 function timesTwo(x) {
