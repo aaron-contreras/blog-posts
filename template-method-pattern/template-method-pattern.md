@@ -1,6 +1,6 @@
 # Template Method Pattern
 
-Design patterns are a non-fundamental piece of software engineering. They are named and used not by their concrete examples, but by the patterns have been developed over time. They are used to help write cleaner, and more extensible code. 
+Design patterns are a non-fundamental piece of software engineering. They are named and used not by their concrete examples, but by the patterns that have been developed over time. They are used to help write cleaner, and more extensible code. 
 
 The **Template Method Pattern** is used often in frameworks, such as React and Ruby On Rails, however it can be used to great effect in re-useable software written specifically for your own applications.
 
