@@ -97,7 +97,7 @@ This pattern can also be used in every-day code whenever you need to run a "proc
 
 Below is a link to an example that can be played with and run.
 
-https://repl.it/@I3uckwheat/Template-method-pattern#index.js
+[Live Code](https://repl.it/@I3uckwheat/Template-method-pattern#index.js)
 
 This example is one way you could create a file-uploader that can handle different types of files. Pay close attention to the base class `FileUpload` and take note at how there are "hooks" and mandatory methods. Hooks are used to run operations during the process of the defined algorithm (such as starting a loading indicator, then later stopping it), `uploadingFile` and `finishedUploading` are examples of hooks. 
 
