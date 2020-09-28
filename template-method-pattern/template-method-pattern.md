@@ -84,7 +84,7 @@ Notice how we do not overwrite the `play` method while defining a sub-class? Thi
 
 Just as a song has defined portions that need to happen in a certain order our template method makes sure this happens. It would be pretty strange if our song played out of order. 
 
-You may notice I didn't add the `instrumentalSolo` method to the child class, this is optional for songs, so it's optional for our template method. Classes that take advantage of the **Template Method Pattern** often have methods that do not need to be implemented, these are called "hooks" as they hook into the currently running process, "lifecycle hooks" is another way to define these. Hooks can be both synchronous and interrupt the flow of the currently running process and modify data (or any other number of operations), or be asynchronous and be used for reporting the status of the currently running operation.
+You may notice I didn't add the `instrumentalSolo` method to the child class, this is optional for songs, so it's optional for our template method. Classes that take advantage of the **Template Method Pattern** often have methods that do not need to be implemented, these are called "hooks" as they hook into the currently running process ("lifecycle hooks" is another way to define these). Hooks can be both synchronous and interrupt the flow of the currently running process and modify data (or any other number of operations), or be asynchronous and be used for reporting the status of the currently running operation.
 
 
 ## Where is it used?
@@ -107,10 +107,10 @@ In the example, you can clearly see the complexity of each implementation differ
 
 ## Conclusions
 
-You may recognize this pattern in your own code, even if you're not explicitly using it. This pattern is one that lends itself naturally in OOP, but being aware of it's advantages and definition, can help you use it more deliberately and effectively. It's a fairly simple pattern, but a very powerful one.
+You may recognize this pattern in your own code, even if you're not explicitly using it. This pattern is one that lends itself naturally in OOP, but being aware of it's advantages and definition, can help you use it more deliberately and effectively. It's a fairly simple pattern, yet a very powerful one.
 
 ## More Resources
 
 * https://sourcemaking.com/design_patterns/template_method
 * A very cool example in Ruby: https://repl.it/@rlmoser/TemplatePattern-Coffee#main.rb
-* A long video, but is mostly useful to understanding this pattern up to the 20 min mark: https://www.youtube.com/watch?v=7ocpwK9uesw
+* A long video, but is mostly useful to understanding this pattern up to the 20-min mark: https://www.youtube.com/watch?v=7ocpwK9uesw
