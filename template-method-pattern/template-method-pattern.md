@@ -105,6 +105,8 @@ The most important part of this pattern is throwing errors on things that *need*
 
 In the example, you can clearly see the complexity of each implementation differs, and can differ as much as it needs to. 
 
+The biggest difference between this live example, and the song example above is having a conditional in the template method. To play a song, a musician doesn't need to determine what parts they need to play, the song is played from start to finish; but code is not music, therefore it is perfectly valid to have logic within the template method. In the file uploader example, the template method (`saveFile`), uses the `isValid` method implemented on a child class to determine which path is taken in the conditional. This gives develops a very nice way to control how code works, while leaving it very extensible. 
+
 ## Conclusions
 
 You may recognize this pattern in your own code, even if you're not explicitly using it. This pattern is one that lends itself naturally in OOP, but being aware of it's advantages and definition, can help you use it more deliberately and effectively. It's a fairly simple pattern, but a very powerful one.
