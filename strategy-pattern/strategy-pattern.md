@@ -108,7 +108,8 @@ I also suspect SnapChat in using the strategy pattern. Consider each filter a `R
 ## Example Case Study
 
 Below is a link to a more fleshed-out example that can be played with and run, inspired by SnapChat.
-[click me!](https://repl.it/@I3uckwheat/strategic-printer#script.js)
+
+[Live Example](https://repl.it/@I3uckwheat/strategic-printer#script.js)
 
 A few important things to point out:
 
