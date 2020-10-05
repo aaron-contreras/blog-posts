@@ -1,6 +1,6 @@
 # Template Method Pattern
 
-Design patterns are a non-fundamental piece of software engineering. They are named and used not by their concrete examples, but by the patterns have been developed over time. They are used to help write cleaner, and more extensible code. 
+Design patterns are a non-fundamental piece of software engineering. They are named and used not by their concrete examples, but by the patterns that have been developed over time. They are used to help write cleaner, and more extensible code. 
 
 The **Template Method Pattern** is used often in frameworks, such as React and Ruby On Rails, however it can be used to great effect in re-useable software written specifically for your own applications.
 
@@ -82,7 +82,7 @@ myJam.play(); // This runs all the other methods we defined in the MyFunkySong c
 
 Notice how we do not overwrite the `play` method while defining a sub-class? This is to help us re-use our algorithm to do some sort of process. Overwriting `play` defeats the purpose of using this pattern.
 
-Just as a song has defined portions that need to happen in a certain order our template method makes sure this happens. It would be pretty strange if our song played out of order. 
+Just as a song has defined portions that need to happen in a certain order, our template method makes sure this happens. It would be pretty strange if our song played out of order. 
 
 You may notice I didn't add the `instrumentalSolo` method to the child class, this is optional for songs, so it's optional for our template method. Classes that take advantage of the **Template Method Pattern** often have methods that do not need to be implemented, these are called "hooks" as they hook into the currently running process, "lifecycle hooks" is another way to define these. Hooks can be both synchronous and interrupt the flow of the currently running process and modify data (or any other number of operations), or be asynchronous and be used for reporting the status of the currently running operation.
 
